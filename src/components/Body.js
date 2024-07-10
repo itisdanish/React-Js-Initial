@@ -7,6 +7,7 @@ const Body = ()=>{
     const [listOfRest, setResList] = useState([])
     const [searchText, setSearchText] = useState ("")
     const [filteredRes, setFilteredRes] = useState([])
+    const [press,setPress]=useState()
 
     useEffect(()=>{
         fetchData()
@@ -73,7 +74,7 @@ const Body = ()=>{
             <div className="res-container">
                 {
                     filteredRes.map((list) => (
-                       <Link to={"restaurants/"+list.info.id} key={list.info.id}><RestaurantCard resData={list} /></Link>
+                       <Link className='res-card' to={"restaurants/"+list.info.id} key={list.info.id}><RestaurantCard resData={list} /></Link>
                     ))
                 }
             </div>
